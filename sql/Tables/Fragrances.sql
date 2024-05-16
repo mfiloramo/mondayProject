@@ -1,5 +1,5 @@
 CREATE TABLE [dbo].[Fragrances] (
-    id INT PRIMARY KEY,
+    id INT IDENTITY PRIMARY KEY,
     name NVARCHAR(255) NOT NULL,
     description NVARCHAR(MAX),
     category NVARCHAR(100),

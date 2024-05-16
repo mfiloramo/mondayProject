@@ -1,5 +1,5 @@
 CREATE TABLE [dbo].[Orders] (
-    id NVARCHAR(50) PRIMARY KEY,
+    id INT IDENTITY PRIMARY KEY,
     created_at DATETIME NOT NULL DEFAULT GETDATE(),
     updated_at DATETIME NOT NULL DEFAULT GETDATE(),
     number_of_kits INT NOT NULL,

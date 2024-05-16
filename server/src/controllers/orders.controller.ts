@@ -18,7 +18,7 @@ export const getAllOrders = async (req: Request, res: Response): Promise<void> =
 export const getOrdersByFragrance = async (req: Request, res: Response): Promise<void> => {
   try {
     // FRAGRANCE ORDER DATA PAYLOAD
-    const { id } = req.query;
+    const { id } = req.params;
 
     // RETRIEVE ORDERS BY FRAGRANCE ID
     const response = await sequelize.query('EXECUTE GetOrdersByFragrance :id', {
