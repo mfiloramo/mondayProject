@@ -35,16 +35,33 @@ export const getOrdersByFragrance = async (req: Request, res: Response): Promise
 export const createOrder = async (req: Request, res: Response): Promise<void> => {
   try {
     // ORDER DATA PAYLOAD
-    const { id, created_at, updated_at, number_of_kits, fragrance1_id, fragrance2_id, fragrance3_id } = req.body;
+    const {
+      first_name,
+      last_name,
+      number_of_kits,
+      fragrance1_id,
+      fragrance2_id,
+      fragrance3_id
+    } = req.body;
 
     // ADD ORDER TO DATABASE
-    const response = await sequelize.query('EXECUTE CreateOrder :id, :created_at, :updated_at, :number_of_kits, :fragrance1_id, :fragrance2_id, :fragrance3_id', {
-      replacements: { id, created_at, updated_at, number_of_kits, fragrance1_id, fragrance2_id, fragrance3_id }
-    })
+    const response = await sequelize.query(
+      'EXECUTE CreateOrder :first_name, :last_name, :number_of_kits, :fragrance1_id, :fragrance2_id, :fragrance3_id',
+      {
+        replacements: {
+          first_name,
+          last_name,
+          number_of_kits: parseInt(number_of_kits, 10),
+          fragrance1_id: parseInt(fragrance1_id, 10),
+          fragrance2_id: parseInt(fragrance2_id, 10),
+          fragrance3_id: parseInt(fragrance3_id, 10)
+        }
+      }
+    );
     res.json(response[0]);
   } catch (error: any) {
     // ERROR HANDLING
     res.status(500).send(error);
     console.error(error);
   }
-}
+};

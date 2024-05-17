@@ -79,7 +79,7 @@ export const addFragrance = async (req: Request, res: Response): Promise<void> =
 
 
     if (apiToken) {
-      const mondayResponse = await mondayApiToken.post('', { query: mutation });
+      const mondayResponse: AxiosResponse<any, any> = await mondayApiToken.post('', { query: mutation });
       console.log("Monday API Response: ", mondayResponse.data);
     }
 
@@ -157,22 +157,18 @@ export const deleteFragrance = async (req: Request, res: Response): Promise<void
 
 const getFragrancesFromMonday = async (): Promise<any[]> => {
   const query = `
-    {
-      boards(ids: [${process.env.BOARD_ID_FRAGRANCES}]) {
-        id
+    { boards (limit:1) {
+      name
+      id
+      description
+      items {
         name
-        items_page(limit: 2) {
-          items {
-            id
-            name
-            column_values {
-              id
-              text
-            }
-          }
-        }
-      }
-    }`;
+        column_values {
+          title
+          id
+          type
+          text
+    } } } }`;
 
   try {
     const response = await mondayApiToken.post('', { query });
@@ -325,9 +321,11 @@ const syncData = async (): Promise<void> => {
   // await syncOrders();
 };
 
-// AUTOMATICALLY SYNC WITH DATABASE
-syncData().then((): void => {
-  console.log('Data synced successfully');
-}).catch(error => {
-  console.error('Error during data sync:', error);
-});
+// DISABLED: AUTOMATICALLY SYNC WITH DATABASE
+// syncData().then((): void => {
+//   console.log('Data synced successfully');
+// }).catch(error => {
+//   console.error('Error during data sync:', error);
+// });
+
+// TODO: BASED ON THE CURRENT IMPLEMENTATION OF THE MONDAY.COM API INTEGRATION, WE CAN QUERY FRAGRANCE DATA FROM BOTH THE DATABASE AND API. WE ATTEMPT TO MAP THE DATA AND CHECK FOR VALID ENTRIES IN THE EXISTING BOARD; CRUD IS PERFORMED ACCORDINGLY. CURRENTLY I'M HAVING DIFFICULTY SYNCHRONIZING THE TABLE WITH THE DATABASE. THE NAMES OF THE FRAGRANCES APPEAR BUT THAT'S IT. VIEW THE CONSOLE FOR A BETTER UNDERSTANDING OF THE ERROR. IT COULD HAVE TO DO WITH A POTENTIAL MISMATCH BETWEEN THE BOARD COLUMNS AND THE DATABASE COLUMNS (THERE'S A NAME COLUMN IN BOTH TABLES, BUT ALSO A FRAGRANCE COLUMN IN THE MONDAY BOARD THAT SHOWS THE NAME --- POSSIBLE MISMATCH? OVERLOAD?). AUTO-SYNC IS DISABLED TO LIMIT API CALLS. *** READ THE MONDAY.COM API DOCUMENTATION TO TROUBLESHOOT. AT ONE POINT, YOU WERE ABLE TO MAKE CLEAN GRAPHQL QUERIES AGAINST THE API (SEE mondayApiResponse VARIABLE) ***
