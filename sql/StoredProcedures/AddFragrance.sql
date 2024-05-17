@@ -1,5 +1,4 @@
-CREATE PROCEDURE AddFragrance
-    @id INT,
+CREATE PROCEDURE [dbo].[AddFragrance]
     @name NVARCHAR(255),
     @description NVARCHAR(MAX) = NULL,
     @category NVARCHAR(100) = NULL,
@@ -8,15 +7,14 @@ CREATE PROCEDURE AddFragrance
     @image_url NVARCHAR(255) = NULL
 AS
 BEGIN
-INSERT INTO Fragrances (id, name, description, category, created_at, updated_at, image_url)
-VALUES (
-           @id,
-           @name,
-           @description,
-           @category,
-           COALESCE(@created_at, GETDATE()),
-           COALESCE(@updated_at, GETDATE()),
-           @image_url
-       );
+    INSERT INTO Fragrances (name, description, category, created_at, updated_at, image_url)
+    VALUES (
+       @name,
+       @description,
+       @category,
+       COALESCE(@created_at, GETDATE()),
+       COALESCE(@updated_at, GETDATE()),
+       @image_url
+    );
 END;
 GO
