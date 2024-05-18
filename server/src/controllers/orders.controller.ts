@@ -15,23 +15,6 @@ export const getAllOrders = async (req: Request, res: Response): Promise<void> =
   }
 }
 
-export const getOrdersByFragrance = async (req: Request, res: Response): Promise<void> => {
-  try {
-    // FRAGRANCE ORDER DATA PAYLOAD
-    const { id } = req.params;
-
-    // RETRIEVE ORDERS BY FRAGRANCE ID
-    const response = await sequelize.query('EXECUTE GetOrdersByFragrance :id', {
-      replacements: { id }
-    })
-    res.json(response[0]);
-  } catch (error: any) {
-    // ERROR HANDLING
-    res.status(500).send(error);
-    console.error(error);
-  }
-}
-
 export const createOrder = async (req: Request, res: Response): Promise<void> => {
   try {
     // ORDER DATA PAYLOAD
@@ -59,6 +42,26 @@ export const createOrder = async (req: Request, res: Response): Promise<void> =>
       }
     );
     res.json(response[0]);
+  } catch (error: any) {
+    // ERROR HANDLING
+    res.status(500).send(error);
+    console.error(error);
+  }
+};
+
+
+export const updateOrderStatus = async (req: Request, res: Response): Promise<void> => {
+  try {
+    // ORDER DATA PAYLOAD
+    const { id, status } = req.body;
+
+    // UPDATE ORDER IN DATABASE
+    const response = await sequelize.query('EXECUTE UpdateOrderStatus :id, :status',{
+      replacements: { id, status }
+    });
+
+    // SEND 200 RESPONSE TO USER
+    res.status(200).send('Order status updated successfully');
   } catch (error: any) {
     // ERROR HANDLING
     res.status(500).send(error);
