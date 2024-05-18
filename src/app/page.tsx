@@ -90,7 +90,7 @@ export default function Home(): ReactElement {
 
       // setTimeouts ADDED FOR SIMULATED "LOADING" EFFECT
       axios
-        .post(`\`${ environmentAPI }/api/orders`, orderPayload)
+        .post(`\${ environmentAPI }/api/orders`, orderPayload)
         .then((): void => {
           setTimeout((): void => {
             setIsButtonLoading(false);
