@@ -1,5 +1,0 @@
-CREATE PROCEDURE GetAllOrders
-AS
-BEGIN
-    SELECT * FROM Orders;
-END;
