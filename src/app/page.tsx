@@ -32,11 +32,13 @@ export default function Home(): ReactElement {
   const [showToast, setShowToast] = useState(false);
   const [toastText, setToastText] = useState('');
 
+  const environmentAPI: string = 'https://monday-candle-api-bc20eb8556ae.herokuapp.com/'
+
   // EFFECT HOOKS
-  useEffect(() => {
-    const fetchFragrances = async () => {
+  useEffect((): void => {
+    const fetchFragrances = async (): Promise<void> => {
       try {
-        const response = await axios.get('http://localhost:3010/api/fragrances');
+        const response = await axios.get(`${ environmentAPI }/api/fragrances`);
         console.log(response.data);
         if (response.data.fragrances) {
           setFragrances(response.data.fragrances);
@@ -55,7 +57,7 @@ export default function Home(): ReactElement {
 
   const options = useMemo(
     () =>
-      fragrances.map((fragrance) => ({
+      fragrances.map((fragrance: Fragrance) => ({
         value: fragrance.id.toString(),
         label: fragrance.name,
       })),
@@ -88,7 +90,7 @@ export default function Home(): ReactElement {
 
       // setTimeouts ADDED FOR SIMULATED "LOADING" EFFECT
       axios
-        .post('http://localhost:3010/api/orders', orderPayload)
+        .post(`\`${ environmentAPI }/api/orders`, orderPayload)
         .then((): void => {
           setTimeout((): void => {
             setIsButtonLoading(false);
