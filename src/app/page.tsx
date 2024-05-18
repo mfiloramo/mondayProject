@@ -37,6 +37,7 @@ export default function Home(): ReactElement {
     const fetchFragrances = async () => {
       try {
         const response = await axios.get('http://localhost:3010/api/fragrances');
+        console.log(response.data);
         if (response.data.fragrances) {
           setFragrances(response.data.fragrances);
         }
