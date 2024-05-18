@@ -30,6 +30,11 @@ jobs:
       - name: Run Tests
         run: npm run test --if-present
 
+      - name: Prepare For Deployment
+        run: |
+          cp package.json ./server
+          cp package-lock.json ./server
+
       - name: Upload Artifact For Deployment Job
         uses: actions/upload-artifact@v2
         with:
