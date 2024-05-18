@@ -32,7 +32,7 @@ export default function Home(): ReactElement {
   const [showToast, setShowToast] = useState(false);
   const [toastText, setToastText] = useState('');
 
-  const environmentAPI: string = 'https://monday-candle-api-bc20eb8556ae.herokuapp.com/'
+  const environmentAPI: string = 'https://monday-candle-api-bc20eb8556ae.herokuapp.com'
 
   // EFFECT HOOKS
   useEffect((): void => {
