@@ -44,7 +44,7 @@ export const createOrder = async (req: Request, res: Response): Promise<void> =>
       fragrance3_id
     } = req.body;
 
-    // ADD ORDER TO DATABASE
+    // ADD ORDER TO DATABASE WHILE ENSURING DATA TYPE INTEGRITY
     const response = await sequelize.query(
       'EXECUTE CreateOrder :first_name, :last_name, :number_of_kits, :fragrance1_id, :fragrance2_id, :fragrance3_id',
       {
