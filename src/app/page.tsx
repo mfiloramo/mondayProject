@@ -143,7 +143,7 @@ export default function Home(): ReactElement {
     // MAIN COMPONENT CONTAINER
     <>
       <h1 className={'text-2xl font-bold text-center my-5'}>Candlebox Order Maker</h1>
-      <div className="flex flex-col bg-slate-100 justify shadow-xl p-5 mt-5 mx-auto w-full max-w-xl rounded">
+      <div className="flex flex-col bg-slate-200 justify shadow-xl p-5 mt-5 mx-auto w-full max-w-xl rounded">
         {/* TOP ROW CONTAINER */}
         <div className="flex flex-row gap-5 text-left text-black w-max">
           {/* NAME INPUT CONTAINER */}
