@@ -50,7 +50,7 @@ export default function Home(): ReactElement {
       }
     };
 
-    fetchFragrances();
+    fetchFragrances().then((response: any): void => response);
   }, []);
 
   useEffect((): void => {}, [selectedFragrances]);
