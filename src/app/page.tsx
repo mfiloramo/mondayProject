@@ -34,14 +34,16 @@ export default function Home(): ReactElement {
 
   const environmentAPI: string = 'https://monday-candle-api-bc20eb8556ae.herokuapp.com'
 
+  // 'http://localhost:3047/'
+
   // EFFECT HOOKS
   useEffect((): void => {
     const fetchFragrances = async (): Promise<void> => {
       try {
-        const response = await axios.get(`https://monday-candle-api-bc20eb8556ae.herokuapp.com/api/fragrances`);
-        console.log(response.data);
-        if (response.data.fragrances) {
-          setFragrances(response.data.fragrances);
+        const response = await axios.get(`${ environmentAPI }/api/fragrances`);
+        if (response.data) {
+          console.log(response.data)
+          setFragrances(response.data);
         }
       } catch (error) {
         console.error('Error fetching fragrances:', error);
@@ -78,7 +80,7 @@ export default function Home(): ReactElement {
   const handleStartOrder = (): void => {
     setIsButtonLoading(true);
     setConfirmButton('');
-    if (selectedFragrances.length === 3) {
+    if (selectedFragrances.length === 3 && quantity > 0) {
       const orderPayload = {
         first_name: firstName,
         last_name: lastName,
@@ -90,7 +92,7 @@ export default function Home(): ReactElement {
 
       // setTimeouts ADDED FOR SIMULATED "LOADING" EFFECT
       axios
-        .post(`https://monday-candle-api-bc20eb8556ae.herokuapp.com/api/orders`, orderPayload)
+        .post(`${ environmentAPI }/api/orders`, orderPayload)
         .then((): void => {
           setTimeout((): void => {
             setIsButtonLoading(false);
@@ -190,19 +192,19 @@ export default function Home(): ReactElement {
 
           {/* QUANTITY SELECTOR */}
           <div className="flex items-center gap-1.5 mb-0">
-            <button
-              className="p-2 bg-gray-200 rounded"
+            <Button
+              className="p-2"
               onClick={() => setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 0))}
             >
               -
-            </button>
+            </Button>
             <span>{quantity}</span>
-            <button
-              className="p-2 bg-gray-200 rounded"
+            <Button
+              className="p-2"
               onClick={() => setQuantity((prevQuantity) => prevQuantity + 1)}
             >
               +
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -217,7 +219,7 @@ export default function Home(): ReactElement {
             success={submitSuccessButtonColor}
             loading={isButtonLoading}
             onClick={handleStartOrder}
-            disabled={!firstName || !lastName || selectedFragrances.length !== 3}
+            disabled={!firstName || !lastName || selectedFragrances.length !== 3 || quantity === 0}
           >
             {confirmButton === 'Success' && <Check className="-ml-3 mr-1" />}
             {confirmButton}
