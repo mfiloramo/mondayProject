@@ -42,7 +42,6 @@ export default function Home(): ReactElement {
       try {
         const response = await axios.get(`${ environmentAPI }/api/fragrances`);
         if (response.data) {
-          console.log(response.data)
           setFragrances(response.data);
         }
       } catch (error) {
@@ -102,8 +101,8 @@ export default function Home(): ReactElement {
             setTimeout((): void => {
               setShowToast(false);
               handleClearForm(); // CLEAR FORM AFTER HIDING TOAST
-            }, 3000); // HIDE TOAST AFTER 2 SECONDS
-          }, 2000); // SHOW TOAST AFTER 2 SECONDS
+            }, 2000); // HIDE TOAST AFTER 2 SECONDS
+          }, 1500); // SHOW TOAST AFTER 2 SECONDS
         })
         .catch((error): void => {
           console.error('Error:', error);
@@ -115,8 +114,8 @@ export default function Home(): ReactElement {
             setTimeout((): void => {
               setShowToast(false);
               handleClearForm(); // CLEAR FORM AFTER HIDING TOAST
-            }, 3000); // HIDE TOAST AFTER 2 SECONDS
-          }, 2000); // SHOW TOAST AFTER 2 SECONDS
+            }, 2000); // HIDE TOAST AFTER 2 SECONDS
+          }, 1500); // SHOW TOAST AFTER 2 SECONDS
         });
     } else {
       setIsButtonLoading(false);
@@ -125,7 +124,7 @@ export default function Home(): ReactElement {
       setShowToast(true);
       setTimeout((): void => {
         setShowToast(false); // HIDE TOAST AFTER 2 SECONDS
-      }, 3000);
+      }, 2000);
       console.error('Must select exactly 3 fragrances to start the order.');
     }
   };
