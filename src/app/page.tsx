@@ -33,8 +33,8 @@ export default function Home(): ReactElement {
   const [toastText, setToastText] = useState('');
 
   const environmentAPI: string =
-    // 'https://monday-candle-api-bc20eb8556ae.herokuapp.com';
-  'http://localhost:3047';
+    'https://monday-candle-api-bc20eb8556ae.herokuapp.com';
+  // 'http://localhost:3057';
 
   // EFFECT HOOKS
   useEffect((): void => {
