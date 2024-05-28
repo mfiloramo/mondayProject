@@ -79,21 +79,21 @@ The application consists of several key components:
 
 - **View Fragrances**:
     - Displays all available fragrances.
-    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+    - <p align="center"><img src="public/readme-screenshots/fragrances-board-view.png" alt="Screenshot Placeholder"></p>
 
 - **Add/Update/Delete Fragrances**:
     - Directly interact with the fragrances board to manage fragrance offerings.
-    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+    - <p align="center"><img src="public/readme-screenshots/fragrances-board-change.png" alt="Screenshot Placeholder"></p>
 
 #### Orders Board
 
 - **View Orders**:
     - Displays all placed orders and their statuses.
-    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+    - <p align="center"><img src="public/readme-screenshots/orders-board-view.png" alt="Screenshot Placeholder"></p>
 
 - **Update Order Status**:
     - Change the status of an order directly on the board.
-    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+    - <p align="center"><img src="public/readme-screenshots/orders-board-status.png" alt="Screenshot Placeholder"></p>
 
 ## Tech Stack
 
@@ -102,40 +102,41 @@ This project utilizes a modern tech stack to ensure both robustness and ease of 
 <table style="border-collapse: collapse; border: none;">
   <tr>
     <td style="padding: 10px;">
-      <p align="center"><img src="public/readme-logos/typescript-logo.png" height="45" alt="TypeScript Logo"></p>
+      <img src="public/readme-logos/typescript-logo.png" height="45" alt="TypeScript Logo"><br>
       A statically typed superset of JavaScript that enhances code quality and readability. Chosen for its robust type-checking and improved developer productivity.
     </td>
     <td style="padding: 10px;">
-      <p align="center"><img src="public/readme-logos/react-logo.png" height="45" alt="React Logo"></p>
+      <img src="public/readme-logos/react-logo.png" height="45" alt="React Logo"><br>
       A JavaScript library for building user interfaces. Chosen for its component-based architecture, simple state management, and compatibility with the Monday.com platform.
     </td>
   </tr>
   <tr>
     <td style="padding: 10px;">
-      <p align="center"><img src="public/readme-logos/nextjs-logo.png" height="35" alt="Next.js Logo"></p>
+      <img src="public/readme-logos/nextjs-logo.png" height="35" alt="Next.js Logo"><br>
       A React framework with hybrid static & server rendering, and route pre-fetching. Chosen for its fast setup and performance optimization capabilities.
     </td>
     <td style="padding: 10px;">
-      <p align="center"><img src="public/readme-logos/vibe-logo.png" height="45" alt="Vibe Logo"></p>
+      <img src="public/readme-logos/vibe-logo.png" height="45" alt="Vibe Logo"><br>
       A design system by Monday.com for building consistent and cohesive user interfaces. Chosen for seamless integration with the Monday.com platform.
     </td>
   </tr>
   <tr>
     <td style="padding: 10px;">
-      <p align="center"><img src="public/readme-logos/tailwind-logo.png" height="25" alt="Tailwind CSS Logo"></p>
+      <img src="public/readme-logos/tailwind-logo.png" height="25" alt="Tailwind CSS Logo"><br>
       A utility-first CSS framework for rapidly building custom designs. Chosen for its flexibility and ease of use in user interface layout.
     </td>
     <td style="padding: 10px;">
-      <p align="center"><img src="public/readme-logos/turbopack-logo.png" height="32" alt="Turbopack Logo"></p>
+      <img src="public/readme-logos/turbopack-logo.png" height="32" alt="Turbopack Logo"><br>
       An experimental, Rust-powered, incremental build tool for Next.js applications. Chosen for its performance and speed in application bundling during development.
     </td>
   </tr>
 </table>
 
+
 ## Application Flow
 Below is a diagram illustrating the flow of data within the client application. Data flows from the frontend to the backend API, which processes requests by firing stored procedures that interact with the database, and updates are synchronized with Monday.com via webhooks.
 
 <p align="center">
-   <img src="src/assets/monday-client-app-flow.drawio.svg" width="100%">
+   <img src="public/readme-screenshots/monday-app-flow.drawio.svg" width="100%">
 </p>
 <br><br>
