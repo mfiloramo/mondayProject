@@ -5,7 +5,7 @@ import { Check } from 'monday-ui-react-core/icons';
 import { TextField, Button, Toast } from 'monday-ui-react-core';
 import dynamic from "next/dynamic";
 
-const Dropdown: ComponentType<any> = dynamic(() => import('monday-ui-react-core').then(mod => mod.Dropdown), { ssr: false });
+const Dropdown: ComponentType<any> = dynamic(() => import('monday-ui-react-core').then((mod: any) => mod.Dropdown), { ssr: false });
 
 interface Fragrance {
   id: number;
@@ -52,9 +52,7 @@ export default function Home(): ReactElement {
     };
 
     fetchFragrances().then((response: any): void => response);
-  }, []);
-
-  useEffect((): void => {}, [selectedFragrances]);
+  }, [selectedFragrances]);
 
   const options = useMemo(
     () =>
@@ -62,7 +60,7 @@ export default function Home(): ReactElement {
         value: fragrance.id.toString(),
         label: fragrance.name,
       })),
-    [fragrances]
+    [ fragrances ]
   );
 
   // HANDLER FUNCTIONS

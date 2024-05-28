@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<p align="center">
+   <img src="public/readme-logos/monday-app-banner.png" width="100%" alt="monday-client-app-banner">
+</p>
 
-First, run the development server:
+This client application provides an interface for managing candle orders, specifically integrated with the Monday.com platform. It allows users to place orders, manage fragrance offerings, and interact with the Monday.com boards to achieve this functionality.
+
+<hr>
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Interacting with the Application](#interacting-with-the-application)
+- [Tech Stack](#tech-stack)
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/mfiloramo/mondayProject.git
+    cd mondayProject
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+The client application allows users to place candle orders, select fragrances, and interact with the Monday.com platform. To run the application locally, use the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the application in development mode on the specified  using the `next dev server`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run the application in development using <a href="https://turbo.build/pack">Turbopack</a>, an experimental Rust-powered incremental build tool available within Next.js, run the following command:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run turbo
+```
 
-## Learn More
+This will leverage Turbopack to run the development server. Changes in development will now be incremental, so you can enjoy significantly streamlined development in your browser. Note that this tool is in beta and currently does not yet support build outputs.
 
-To learn more about Next.js, take a look at the following resources:
+## Interacting with the Application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application consists of several key components:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Order Maker
 
-## Deploy on Vercel
+1. **Input Customer Details**:
+    - Enter the customer's first name and last name.
+    - <p align="center"><img src="public/readme-screenshots/orders-input-name.png" alt="Screenshot Placeholder"></p>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Select Fragrances**:
+    - Use the dropdown to select exactly 3 fragrances for the order.
+    - <p align="center"><img src="public/readme-screenshots/orders-input-fragrances.png" alt="Screenshot Placeholder"></p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. **Specify Quantity**:
+    - Use the quantity selector to specify the number of kits.
+    - <p align="center"><img src="public/readme-screenshots/orders-input-quantity.png" alt="Screenshot Placeholder"></p>
+
+4. **Submit Order**:
+    - Click the "Submit Order" button to place the order.
+    - <p align="center"><img src="public/readme-screenshots/orders-input-submit.png" alt="Screenshot Placeholder"></p>
+
+5. **Clear Form**:
+    - Use the "Clear Form" button to reset all input fields.
+    - <p align="center"><img src="public/readme-screenshots/orders-input-clear.png" alt="Screenshot Placeholder"></p>
+
+### Monday.com Boards
+
+#### Fragrances Board
+
+- **View Fragrances**:
+    - Displays all available fragrances.
+    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+
+- **Add/Update/Delete Fragrances**:
+    - Directly interact with the fragrances board to manage fragrance offerings.
+    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+
+#### Orders Board
+
+- **View Orders**:
+    - Displays all placed orders and their statuses.
+    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+
+- **Update Order Status**:
+    - Change the status of an order directly on the board.
+    - <p align="center"><img src="path/to/your/screenshot.png" alt="Screenshot Placeholder"></p>
+
+## Tech Stack
+
+This project utilizes a modern tech stack to ensure both robustness and ease of development. Below is a brief overview of the technologies used and why they were chosen.
+
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="padding: 10px;">
+      <p align="center"><img src="public/readme-logos/typescript-logo.png" height="45" alt="TypeScript Logo"></p>
+      A statically typed superset of JavaScript that enhances code quality and readability. Chosen for its robust type-checking and improved developer productivity.
+    </td>
+    <td style="padding: 10px;">
+      <p align="center"><img src="public/readme-logos/react-logo.png" height="45" alt="React Logo"></p>
+      A JavaScript library for building user interfaces. Chosen for its component-based architecture, simple state management, and compatibility with the Monday.com platform.
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px;">
+      <p align="center"><img src="public/readme-logos/nextjs-logo.png" height="35" alt="Next.js Logo"></p>
+      A React framework with hybrid static & server rendering, and route pre-fetching. Chosen for its fast setup and performance optimization capabilities.
+    </td>
+    <td style="padding: 10px;">
+      <p align="center"><img src="public/readme-logos/vibe-logo.png" height="45" alt="Vibe Logo"></p>
+      A design system by Monday.com for building consistent and cohesive user interfaces. Chosen for seamless integration with the Monday.com platform.
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px;">
+      <p align="center"><img src="public/readme-logos/tailwind-logo.png" height="25" alt="Tailwind CSS Logo"></p>
+      A utility-first CSS framework for rapidly building custom designs. Chosen for its flexibility and ease of use in user interface layout.
+    </td>
+    <td style="padding: 10px;">
+      <p align="center"><img src="public/readme-logos/turbopack-logo.png" height="32" alt="Turbopack Logo"></p>
+      An experimental, Rust-powered, incremental build tool for Next.js applications. Chosen for its performance and speed in application bundling during development.
+    </td>
+  </tr>
+</table>
+
+## Application Flow
+Below is a diagram illustrating the flow of data within the client application. Data flows from the frontend to the backend API, which processes requests by firing stored procedures that interact with the database, and updates are synchronized with Monday.com via webhooks.
+
+<p align="center">
+   <img src="src/assets/monday-client-app-flow.drawio.svg" width="100%">
+</p>
+<br><br>
