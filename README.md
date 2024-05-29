@@ -70,7 +70,7 @@ The application consists of several key components:
    <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-input-submit.png" alt="Screenshot Placeholder"></p>
 
 5. **Clear Form**:
-   Use the "Clear Form" button to reset all input fields.
+   Use the "Clear Form" button to reset all input fields. The form will reset automatically after a successful order submission.
    <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-input-clear.png" alt="Screenshot Placeholder"></p>
 
 ### Monday.com Boards
