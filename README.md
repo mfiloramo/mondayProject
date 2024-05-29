@@ -54,46 +54,46 @@ The application consists of several key components:
 ### Order Maker
 
 1. **Input Customer Details**:
-    - Enter the customer's first name and last name.
-    - <p align="center"><img src="public/readme-screenshots/orders-input-name.png" alt="Screenshot Placeholder"></p>
+    Enter the customer's first name and last name.
+    <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-input-name.png" alt="Screenshot Placeholder"></p>
 
 2. **Select Fragrances**:
-    - Use the dropdown to select exactly 3 fragrances for the order.
-    - <p align="center"><img src="public/readme-screenshots/orders-input-fragrances.png" alt="Screenshot Placeholder"></p>
+   Use the dropdown to select exactly 3 fragrances for the order.
+   <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-input-fragrances.png" alt="Screenshot Placeholder"></p>
 
 3. **Specify Quantity**:
-    - Use the quantity selector to specify the number of kits.
-    - <p align="center"><img src="public/readme-screenshots/orders-input-quantity.png" alt="Screenshot Placeholder"></p>
+   Use the quantity selector to specify the number of kits.
+   <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-input-quantity.png" alt="Screenshot Placeholder"></p>
 
 4. **Submit Order**:
-    - Click the "Submit Order" button to place the order.
-    - <p align="center"><img src="public/readme-screenshots/orders-input-submit.png" alt="Screenshot Placeholder"></p>
+   Click the "Submit Order" button to place the order.
+   <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-input-submit.png" alt="Screenshot Placeholder"></p>
 
 5. **Clear Form**:
-    - Use the "Clear Form" button to reset all input fields.
-    - <p align="center"><img src="public/readme-screenshots/orders-input-clear.png" alt="Screenshot Placeholder"></p>
+   Use the "Clear Form" button to reset all input fields.
+   <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-input-clear.png" alt="Screenshot Placeholder"></p>
 
 ### Monday.com Boards
 
 #### Fragrances Board
 
 - **View Fragrances**:
-    - Displays all available fragrances.
-    - <p align="center"><img src="public/readme-screenshots/fragrances-board-view.png" alt="Screenshot Placeholder"></p>
+    Displays all available fragrances.
+    <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/fragrances-board-view.png" alt="Screenshot Placeholder"></p>
 
 - **Add/Update/Delete Fragrances**:
-    - Directly interact with the fragrances board to manage fragrance offerings.
-    - <p align="center"><img src="public/readme-screenshots/fragrances-board-change.png" alt="Screenshot Placeholder"></p>
+    Directly interact with the fragrances board to manage fragrance offerings.
+    <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/fragrances-board-change.png" alt="Screenshot Placeholder"></p>
 
 #### Orders Board
 
 - **View Orders**:
-    - Displays all placed orders and their statuses.
-    - <p align="center"><img src="public/readme-screenshots/orders-board-view.png" alt="Screenshot Placeholder"></p>
+    Displays all placed orders and their statuses.
+    <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-board-view.png" alt="Screenshot Placeholder"></p>
 
 - **Update Order Status**:
-    - Change the status of an order directly on the board.
-    - <p align="center"><img src="public/readme-screenshots/orders-board-status.png" alt="Screenshot Placeholder"></p>
+    Change the status of an order directly on the board.
+    <p align="center" style="padding-bottom: 20px"><img src="public/readme-screenshots/orders-board-status.png" alt="Screenshot Placeholder"></p>
 
 ## Tech Stack
 
