@@ -3,7 +3,7 @@
    <img src="public/readme-logos/monday-app-banner.png" width="100%" alt="monday-client-app-banner">
 </p>
 
-This client application provides an interface for managing candle orders, specifically integrated with the Monday.com platform. It allows users to place orders, manage fragrance offerings, and interact with the Monday.com boards to achieve this functionality.
+This client application provides an interface for managing candle orders, specifically integrated with the Monday.com platform. It allows users to place orders, manage fragrance offerings, and interact with the Monday.com boards to achieve this functionality. This repo is one of three for this application; the API can be found <a href="https://github.com/mfiloramo/mondayProjectAPI">here</a>, and the T-SQL Tables and Stored Procedures can be found <a href="https://github.com/mfiloramo/mondayProjectSQL">here</a>.
 
 <hr>
 
