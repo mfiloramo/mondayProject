@@ -137,6 +137,6 @@ This project utilizes a modern tech stack to ensure both robustness and ease of 
 Below is a diagram illustrating the flow of data within the client application. Data flows from the frontend to the backend API, which processes requests by firing stored procedures that interact with the database, and updates are synchronized with Monday.com via webhooks.
 
 <p align="center">
-   <img src="public/readme-screenshots/monday-app-flow.drawio.svg" width="100%">
+   <img src="public/readme-screenshots/monday-app-flow.drawio.svg" width="60%">
 </p>
 <br><br>
